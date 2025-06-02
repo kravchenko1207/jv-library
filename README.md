@@ -54,7 +54,7 @@ Run the Main class.
 
 Follow the console menu prompts to manage books.
 
-Usage Example
+## Usage Example
 
 Library Menu:
 1. Add a book
@@ -63,8 +63,13 @@ Library Menu:
 4. Show all books
 5. Exit
 Choose an option: 1
+
 Enter book title: Harry Potter
+
 Enter author name: J.K. Rowling
+
 Enter publication year: 1997
+
 Is the book available? (true/false): true
+
 Book added successfully.

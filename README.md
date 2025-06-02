@@ -45,8 +45,7 @@ It supports adding books, searching by title or author, displaying all books, an
 ---
 
 ## How to Run
-
-1. Clone the repository:
+Clone the repository:
 git clone https://github.com/kravchenko1207/jv-library.git
    
 Build the project using your preferred IDE or command line tools.

@@ -1,102 +1,71 @@
-Library Management System
-Author: Iryna Kravchenko
+# Library Management System
 
-Overview
-This is a simple Java console application for managing a library of books. It allows you to add books, search by title or author, and display all books in a sorted order.
+**Author:** Iryna Kravchenko
 
-Project Structure
-model — contains classes describing domain entities: Author (as a record) and Book.
+---
 
-service — contains Library class, which manages a collection of books.
+## Overview
 
-util — utility classes like FileUtil for saving books to a file.
+This is a simple Java console application for managing a collection of books in a library.  
+It supports adding books, searching by title or author, displaying all books, and tracking book availability.
 
-Main — the main entry point with a console-based menu for user interaction.
+---
 
-Key Classes Description
+## Features
 
-public record Author(String name, int birthYear) { }
-An immutable record holding the author's name and birth year.
+- Add a new book with details: author, title, year, availability  
+- Search for a book by its title  
+- Search for books by author name  
+- Display all books sorted alphabetically  
+- Toggle availability status of books (internal functionality)  
+- Save books list to a file (utility class provided)  
 
-Book
-Represents a book with author, title, publication year, and availability status. Supports cloning, equality checks, hashing, and string representation.
+---
 
-toggleAvailability() method flips the availability status.
+## Technologies and Concepts Used
 
-Library
-Manages a collection of books with methods to:
+- Java 17+  
+- Java Records (immutable `Author` class)  
+- Object cloning (`Cloneable` interface)  
+- Java Stream API for filtering and sorting collections  
+- Optional for safe null handling  
+- Recursion for printing books  
+- File I/O using `BufferedWriter`  
+- Modular project structure with packages (`model`, `service`, `util`)  
 
-Add a book
+---
 
-Search by title
+## Project Structure
 
-Search by author
+- **model** — contains `Author` record and `Book` class representing core entities  
+- **service** — contains `Library` class managing a collection of books  
+- **util** — contains utility classes like `FileUtil` for file operations  
+- **Main** — entry point with console menu interface  
 
-Print all books sorted by title
+---
 
-Recursively print books (not used in main menu)
+## How to Run
 
-FileUtil
-Utility for saving a list of books to a text file.
-
-Main
-Console application with menu options to:
-
-Add a book
-
-Search books by title
-
-Search books by author
-
-Show all books
-
-Exit the program
-
-Features and Concepts Used
-Java Record for immutable data class (Author)
-
-Immutability for thread safety and simplicity
-
-Mutable and immutable fields in Book
-
-Cloneable interface implementation for copying books
-
-Override of equals(), hashCode(), and toString() methods for proper comparisons and output
-
-Java Collections (List, Optional) for managing books
-
-Stream API for filtering and sorting
-
-User input handling via Scanner
-
-Recursion example for printing books
-
-File I/O using BufferedWriter
-
-Modular project structure using packages (model, service, util)
-
-How to Run
-Compile all Java files.
+1. Clone the repository:
+   git clone https://github.com/kravchenko1207/jv-library.git
+   
+Build the project using your preferred IDE or command line tools.
 
 Run the Main class.
 
-Use the console menu to interact with the library.
+Follow the console menu prompts to manage books.
 
-Example Usage
+Usage Example
+
 Library Menu:
 1. Add a book
 2. Search by title
 3. Search by author
 4. Show all books
 5. Exit
-Choose an option: 2
-🔍 Enter book title: Harry Potter
-Found: Harry Potter by J.K. Rowling (1997)
-Possible Improvements
-Persist data between sessions (e.g., save/load from file or database)
-
-Partial/substring search support
-
-Book editing functionality
-
-Robust input validation and error handling
+Choose an option: 1
+Enter book title: Harry Potter
+Enter author name: J.K. Rowling
+Enter publication year: 1997
+Is the book available? (true/false): true
+Book added successfully.
